@@ -19,7 +19,7 @@ export default function TitleBox(props) {
                     {props.title.line02}
                 </span>
             </div>
-            <div className="title">
+            <div className="title commercial">
                 <span className="uppercase whiteText">
                     {props.title.header03}
                 </span>

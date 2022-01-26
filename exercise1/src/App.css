@@ -1,3 +1,7 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+}
 .midItems {
   display: flex;
   flex-direction: row;
@@ -11,6 +15,24 @@
   justify-content: space-evenly;
   width: 435px;
   align-items: center;
+}
+
+.title.commercial {
+  background-color: #00b8e0;
+}
+
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  height: 190px;
+  width: 60%;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.title {
+  background-color: #4196a4;
+  padding: 15px;
 }
 
 .topContainer {
@@ -35,18 +57,15 @@
 	justify-content: center;
 }
 
-.titleBox {
-  display: flex;
-  flex-direction: column;
-  height: 170px;
-  justify-content: space-around;
-  position: fixed;
-  left: 300px;
-}
-
-.title {
-  background-color: #4196a4;
-  padding: 15px;
+.topButton02 {
+	border-top-style: solid;
+	border-color: #ffffff;
+	width: 90px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	border-style: groove;
+	justify-content: center;
 }
 
 .uppercase {

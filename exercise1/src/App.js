@@ -1,9 +1,7 @@
 import './App.css';
 import React from 'react';
 import TopContainer from './components/TopContainer';
-import LeftContainer from './components/LeftContainer';
-import RightContainer from './components/RightContainer';
-import TitleBox from './components/TitleBox';
+import MainContainer from './components/MainContainer';
 
 export default function App() {
 
@@ -28,7 +26,7 @@ export default function App() {
   return (
       <div className="App">
         <TopContainer items={topItems}/>
-        <TitleBox title={titles}/>
+        <MainContainer titles={titles}/>
       </div>
   );
 }

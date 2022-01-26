@@ -5,7 +5,7 @@ export default function TopContainer(props) {
   return (
     <div className="topContainer">
       <div className="image01">
-        <img src={Img}></img>
+        <img src={Img} alt="this is logo"></img>
       </div>
       <div className="midItems">
         <p>
@@ -28,7 +28,7 @@ export default function TopContainer(props) {
         <span>
           {props.items.line06}
         </span>
-        <span>
+        <span className="topButton02">
           {props.items.line07}
         </span>
       </div>
