@@ -4,7 +4,7 @@ import Img from './hslogo.png'
 export default function TopContainer(props) {
   return (
     <div className="topContainer">
-      <div className="image01">
+      <div className="image00">
         <img src={Img} alt="this is logo"></img>
       </div>
       <div className="midItems">

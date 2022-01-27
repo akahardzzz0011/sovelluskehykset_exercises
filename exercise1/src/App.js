@@ -23,10 +23,50 @@ export default function App() {
     line06: "Kirjaudu",
     line07: "Valikko"
   }
+
+  const listNews = [
+    {
+      id: 1,
+      head: "Rikosepäilyt | ",
+      text: "EIT-huijaus: Kuolleeksi väitetyn irakilaismiehen tytär valehteli perheen taustoista jo tuvapaikkahakemuksessa"
+    },
+
+    {
+      id: 2,
+      head: "HS Vantaa | ",
+      text: "Vantaalle nousi vankilan näköinen päiväkoti, jota pilkataan nyt surutta verkossa"
+    },
+
+    {
+      id: 3,
+      head: "Päivittyvä seuranta | ",
+      text: "STM: Parasetamolia tai deksametasonia sisältävien lääkkeiden myyntiä rajoitetaan - Ministeriö haluaa varmistaa valmisteiden riittävyyden"
+    },
+
+    {
+      id: 4,
+      head: "Nyt.fi | ",
+      text: "Harry Styles puki ylleen suomalaisen suunnittelijan neuleen, nyt tätä \"mummon tilkkutäkkiä\" neulovat kymmenet tuhannet ympäri maailman - Soitimme vaatesuunnittelijalle"
+    },
+
+    {
+      id: 5,
+      head: "Rikosepäilyt | ",
+      text: "Atte Jääskeläinen sai syytteet liikenneturvallisuuden vaarantamisesta ja vammantuottamuksesta - \"Olen myöntänyt syyllisyyden\""
+    },
+
+    {
+      id: 6,
+      head: "Helsinki | ",
+      text: "Työryhmän ehdotus julki: Jättimäisestä hiilivoimalasta halutaan täysin uudenlainen tapahtumapaikka kaupungin asukkaille"
+    }
+  ]
+
+
   return (
       <div className="App">
         <TopContainer items={topItems}/>
-        <MainContainer titles={titles}/>
+        <MainContainer titles={titles} news={listNews}/>
       </div>
   );
 }
