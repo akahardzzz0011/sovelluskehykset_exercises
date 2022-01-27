@@ -5,8 +5,8 @@ import TitleBox from './TitleBox';
 export default function MainContainer(props) {
   return (
     <div className="mainContainer">
-        <TitleBox title={ props.titles }/>
-        <Section news={ props.news } />
+        <TitleBox title={props.titles}/>
+        <Section news={props.news} leftNews={props.leftNews}/>
     </div>
   );
 }

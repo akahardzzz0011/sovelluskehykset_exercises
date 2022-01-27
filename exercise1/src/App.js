@@ -62,11 +62,39 @@ export default function App() {
     }
   ]
 
+  const leftContainerNews = [
+    {
+      head: "Päivittyvä seuranta | ",
+      text: "STM: Parasetamolia tai deksametasonia sisältävien lääkeiden myyntiä rajoitetaan"
+    },
+
+    {
+      head: "Koronaviruksen vaikutukset Suomessa",
+      text01: "Tartunnat yhteensä",
+      text02: "Tuoreimmat 14 päivää",
+      text03: "Edeltävät 14 päivää",
+      text04: "Kuolleet"
+    },
+
+    {
+      num01: 7776,
+      num02: 293,
+      num03: 132
+    },
+
+    {
+      num01: 334,
+      num02: 5,
+      num03: 1
+    }
+
+  ]
+
 
   return (
       <div className="App">
         <TopContainer items={topItems}/>
-        <MainContainer titles={titles} news={listNews}/>
+        <MainContainer titles={titles} news={listNews} leftNews={leftContainerNews}/>
       </div>
   );
 }
