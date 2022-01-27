@@ -32,18 +32,24 @@ export default function LeftContainer(props) {
                 <span className="spantext02">{props.news[1].text02}</span>
                 <span className="spantext03">{props.news[1].text03}</span>
             </div>
-            <div className="text03">
+            <div className="text04">
                 <span className="boldNum">{props.news[2].num01}</span>
                 <span className="boldNum spantext02">{props.news[2].num02}</span>
-                <span className="boldNum spantext03">{props.news[2].num03}</span>
+                <span className="boldNum">{props.news[2].num03}</span>
             </div>
-            <div>
+            <div className="addMargin">
                 <span className="spantext01">{props.news[1].text04}</span>
             </div>
-            <div className="text03">
+            <div className="text04">
                 <span className="boldNum">{props.news[3].num01}</span>
                 <span className="boldNum spantext02">{props.news[3].num02}</span>
-                <span className="boldNum spantext03">{props.news[3].num03}</span>
+                <span className="boldNum">{props.news[3].num03}</span>
+            </div >
+            <div className="addMargin">
+                <span>{props.news[1].text05}</span>
+            </div>
+            <div className="text02">
+                <span className="boldNum fontYellow">{props.news[3].num04}</span>
             </div>
         </div>
     );

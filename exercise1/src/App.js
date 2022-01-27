@@ -73,7 +73,8 @@ export default function App() {
       text01: "Tartunnat yhteensä",
       text02: "Tuoreimmat 14 päivää",
       text03: "Edeltävät 14 päivää",
-      text04: "Kuolleet"
+      text04: "Kuolleet",
+      text05: "Sairaalahoidossa"
     },
 
     {
@@ -85,7 +86,8 @@ export default function App() {
     {
       num01: 334,
       num02: 5,
-      num03: 1
+      num03: 1,
+      num04: 5
     }
 
   ]
