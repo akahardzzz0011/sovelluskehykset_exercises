@@ -33,8 +33,10 @@ function App() {
     }
   ])
 
-  const updateCart = (index, quantity) => {
-    
+  const updateCart = (index) => {
+    let clone = [...shoppingCart]
+    clone[index - 1].qty += 1
+    setShoppingCart(clone)
   }
 
   return (
@@ -42,7 +44,7 @@ function App() {
       <Title />
 
       <ShoppingCart itemList={ shoppingCart }/>
-      <ButtonBox listUpdate={ updateCart }/>
+      <ButtonBox listUpdate={ updateCart } itemIndex={ shoppingCart }/>
     </div>
   );
 }

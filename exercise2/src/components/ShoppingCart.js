@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ShoppingCart(props) {
-    console.log(props.itemList);
+  
   return (
     <div>
         <ul>
