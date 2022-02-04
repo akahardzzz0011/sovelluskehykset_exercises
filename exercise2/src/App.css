@@ -9,3 +9,32 @@
 	width: 250px;
 	justify-content: space-evenly;
 }
+
+.cartText {
+	margin: 4px 0px;
+	padding: 2px 5px;
+	background-color: #e68eb39c;
+}
+
+.cartListElements {
+  height: 120px;
+}
+
+.titleHeader {
+	margin-left: 10px;
+	color: #575757b3;
+}
+
+.listBox {
+	width: 400px;
+}
+
+.title {
+	background-color: #cac70fb5;
+	height: 100px;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+  width: 400px;
+}

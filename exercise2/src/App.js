@@ -6,6 +6,7 @@ import ButtonBox from './components/ButtonBox';
 
 function App() {
 
+  const [qtyAmount, setQtyAmount] = useState(0)
   const [shoppingCart, setShoppingCart] = useState([
     {
       id: 1,
@@ -35,8 +36,10 @@ function App() {
 
   const updateCart = (index) => {
     let clone = [...shoppingCart]
-    clone[index - 1].qty += 1
+    setQtyAmount(() => Math.floor(Math.random()*3) + 1)
+    clone[index - 1].qty += qtyAmount
     setShoppingCart(clone)
+    console.log("added", qtyAmount, shoppingCart[index - 1].item);
   }
 
   return (
