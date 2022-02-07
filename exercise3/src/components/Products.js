@@ -4,7 +4,7 @@ import ProductBox from './ProductBox'
 export default function Products( { data } ) {
     console.log("here", data);
   return (
-    <div>
+    <div className="products">
         {
             data.map(d => 
                 <ProductBox key={d.id}
