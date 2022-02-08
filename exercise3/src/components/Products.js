@@ -2,7 +2,7 @@ import React from 'react';
 import ProductBox from './ProductBox'
 
 export default function Products( { data } ) {
-    console.log("here", data);
+    
   return (
     <div className="products">
         {

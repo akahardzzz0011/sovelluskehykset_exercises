@@ -1,3 +1,7 @@
+.App {
+	display: flex;
+	flex-direction: column;
+}
 .productBox {
   border: 2px solid;
   border-color: #f6f6f6;
@@ -9,4 +13,9 @@
 	justify-content: center;
 	row-gap: 10px;
 	column-gap: 25px;
+}
+
+.searchBar {
+	display: flex;
+	align-self: center;
 }
