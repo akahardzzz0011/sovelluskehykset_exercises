@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function SearchBar( {filter} ) {
 
   return (
     <div className="searchBar">
-        <input type="text" placeholder="Search" onChange={ e => filter(e.target.value)}></input>
+        <input type="text" placeholder="Type here to search" onChange={ e => filter(e.target.value)}></input>
     </div>
   );
 }

@@ -4,12 +4,18 @@ export default function ProductBox({ desc, currency, price, pCents, prevPrice, i
   
   return (
     <div className="productBox">
+      <div>
         <img src={`./images/${image}`} alt="product"/>
+      </div>
+      <div>
         <div>{desc}</div>
-        <div>{currency}</div>
-        <div>{price}</div>
-        <div>{pCents}</div>
-        <div>{prevPrice}</div>
+      </div>
+      <div className="currencyBox">
+        <div className="currency">{currency}</div>
+        <div className="price">{price}</div>
+        <div className="cents">{pCents}</div>
+        <div className="prevPrice">{prevPrice}</div>
+      </div>
     </div>
   );
 }

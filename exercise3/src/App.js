@@ -24,10 +24,10 @@ function App() {
         setFiltered(productList.products)
       }
     }
-    
-    console.log(filtered);
+
   return (
     <div className="App">
+      <h1 className="header">Welcome to the webshop</h1>
       <SearchBar filter={ filteredData }/>
       <Products data={ filtered }/>
     </div>

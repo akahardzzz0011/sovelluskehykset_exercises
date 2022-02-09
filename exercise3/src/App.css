@@ -2,9 +2,35 @@
 	display: flex;
 	flex-direction: column;
 }
+.cents {
+	font-size: 11px;
+}
+.currency {
+	font-size: 12px;
+}
+.currencyBox {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	margin-top: 10px;
+}
+.header {
+	align-self: center;
+}
+.prevPrice {
+	text-decoration-line: line-through;
+	color: #0000006e;
+	font-size: 12px;
+	align-self: end;
+}
+.price {
+	font-size: 20px;
+}
 .productBox {
-  border: 2px solid;
-  border-color: #f6f6f6;
+	border: 2px solid #f6f6f6;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .products {
@@ -18,4 +44,6 @@
 .searchBar {
 	display: flex;
 	align-self: center;
+	border: 1px solid #b37d16;
+	margin-bottom: 8px;
 }
