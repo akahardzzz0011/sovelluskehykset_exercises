@@ -11,23 +11,24 @@ function App() {
 
   useEffect(() => {
       setProducts(productList.products)
-    }, [])
-/*
-  useEffect(() => {
-      setFiltered(filtered)
-    }, [])
-*/
-    const filteredData = (search) => {
-      setFiltered(() => products.filter(prod => 
-        prod.description.toLowerCase().includes(search.toLowerCase())
-      ))
-     // setProducts(filtered)
-      console.log(products);
-    }
+      setFiltered(productList.products)
+  }, [])
 
+    const filteredData = (search) => {
+
+      if (search !== '') {
+        setFiltered(() => products.filter(prod => 
+        prod.description.toLowerCase().includes(search.toLowerCase())
+        ))
+      } else {
+        setFiltered(productList.products)
+      }
+    }
+    
+    console.log(filtered);
   return (
     <div className="App">
-      <SearchBar filter={filteredData}/>
+      <SearchBar filter={ filteredData }/>
       <Products data={ filtered }/>
     </div>
   );
