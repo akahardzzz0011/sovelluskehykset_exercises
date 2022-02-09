@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductBox from './ProductBox'
 
-export default function Products( { data } ) {
+export default function Products( { data, location } ) {
     
   return (
     <div className="products">
@@ -13,7 +13,10 @@ export default function Products( { data } ) {
                     price={d.price} 
                     pCents={d.priceCents}
                     prevPrice={d.previousPrice} 
-                    image={d.image} 
+                    image={d.image}
+                    image02={d.image02}
+                    amount={d.amount}
+                    location={location}
                 />
             )
         }

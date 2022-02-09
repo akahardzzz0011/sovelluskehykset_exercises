@@ -7,7 +7,9 @@
             "price": 8,
             "priceCents": 99,
             "previousPrice": "",
-            "image": "ziihao02.png"
+            "image": "ziihao02.png",
+            "image02": "starsFour.png",
+            "amount": 345
         },
         {
             "id": 2,
@@ -16,7 +18,9 @@
             "price": 16,
             "priceCents": 99,
             "previousPrice": "",
-            "image": "ziihaoNano.png"
+            "image": "ziihaoNano.png",
+            "image02": "starsFive.png",
+            "amount": 213
         },
         {
             "id": 3,
@@ -25,7 +29,9 @@
             "price": 59,
             "priceCents": 99,
             "previousPrice": "$99.99",
-            "image": "seagatePortable.png"
+            "image": "seagatePortable.png",
+            "image02": "starsFour.png",
+            "amount": 679
         },
         {
             "id": 4,
@@ -43,7 +49,9 @@
             "price": 22,
             "priceCents": 99,
             "previousPrice": "",
-            "image": "dvdDrive.png"
+            "image": "dvdDrive.png",
+            "image02": "starsFour.png",
+            "amount": 1456
         },
         {
             "id": 6,
@@ -61,7 +69,9 @@
             "price": 104,
             "priceCents": 99,
             "previousPrice": "$129.99",
-            "image": "hardDriveHDD.png"
+            "image": "hardDriveHDD.png",
+            "image02": "starsFour.png",
+            "amount": 683
         },
         {
             "id": 8,
@@ -70,7 +80,9 @@
             "price": 349,
             "priceCents": 98,
             "previousPrice": "$449.00",
-            "image": "amdRyzen7.png"
+            "image": "amdRyzen7.png",
+            "image02": "starsFive.png",
+            "amount": 822
         },
         {
             "id": 9,
@@ -79,7 +91,9 @@
             "price": 134,
             "priceCents": "00",
             "previousPrice": "$249.99",
-            "image": "sanDiskSsd.png"
+            "image": "sanDiskSsd.png",
+            "image02": "starsFour.png",
+            "amount": 431
         },
         {
             "id": 10,
@@ -88,7 +102,9 @@
             "price": 99,
             "priceCents": 99,
             "previousPrice": "",
-            "image": "powerSupply.png"
+            "image": "powerSupply.png",
+            "image02": "starsFive.png",
+            "amount": 7623
         },
         {
             "id": 11,
@@ -106,7 +122,9 @@
             "price": 46,
             "priceCents": 99,
             "previousPrice": "$58.99",
-            "image": "seagateHardDrive.png"
+            "image": "seagateHardDrive.png",
+            "image02": "starsFive.png",
+            "amount": 3217
         }
     ]
 }

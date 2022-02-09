@@ -8,6 +8,7 @@ function App() {
 
   const [products, setProducts] = useState([])
   const [filtered, setFiltered] = useState([])
+  const locationInfo = "Ships to Finland"
 
   useEffect(() => {
       setProducts(productList.products)
@@ -29,7 +30,7 @@ function App() {
     <div className="App">
       <h1 className="header">Welcome to the webshop</h1>
       <SearchBar filter={ filteredData }/>
-      <Products data={ filtered }/>
+      <Products data={ filtered } location={locationInfo}/>
     </div>
   );
 }
