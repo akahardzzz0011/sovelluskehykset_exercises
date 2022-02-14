@@ -1,11 +1,10 @@
 import React from 'react';
-import Img from './hslogo.png'
 
 export default function TopContainer(props) {
   return (
     <div className="topContainer">
       <div className="image00">
-        <img src={Img} alt="this is logo"></img>
+        <img src="hslogo.png" alt="this is logo"></img>
       </div>
       <div className="midItems">
         <p>
