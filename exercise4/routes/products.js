@@ -82,3 +82,4 @@ router.put('/:productId', (req, res) => {
     }
 })
 module.exports = router
+exports.products = products
