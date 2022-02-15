@@ -1,7 +1,7 @@
 {
     "products": [
         {
-            "id": "1",
+            "id": "cd6cd7a1-87d9-4c02-9f75-72359f45bc1d",
             "name": "Asus R300",
             "manufacturer": "Asus",
             "category": "laptops",
@@ -9,7 +9,7 @@
             "price": 399
         },
         {
-            "id": "2",
+            "id": "7455c89b-329d-4e86-9814-facae1e81833",
             "name": "Dell XT100",
             "manufacturer": "Dell",
             "category": "laptops",

@@ -31,8 +31,7 @@ router.get('/:productId', (req, res) => {
             }
         }
     } else {
-        //res.json(products[foundId])
-        res.json(foundId)
+        res.json(products[foundId])
     }
     
 })
