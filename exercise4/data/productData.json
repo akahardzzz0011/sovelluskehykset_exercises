@@ -1,0 +1,20 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "name": "Asus R300",
+            "manufacturer": "Asus",
+            "category": "laptops",
+            "description": "model R3000",
+            "price": 399
+        },
+        {
+            "id": "2",
+            "name": "Dell XT100",
+            "manufacturer": "Dell",
+            "category": "laptops",
+            "description":" model XT100",
+            "price": 399
+        }
+    ]
+}

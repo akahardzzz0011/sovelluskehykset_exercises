@@ -1,0 +1,11 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "name": "John Smith",
+            "address": "streetroad 4",
+            "phone": "044897485",
+            "email": "john.smith@mail.com" 
+        }
+    ]
+}

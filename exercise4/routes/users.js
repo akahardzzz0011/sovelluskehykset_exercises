@@ -1,18 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const { v4: uuidv4 } =require('uuid')
+const { v4: uuidv4 } = require('uuid')
+let userData = require('../data/userData')
+ let users = userData.users
 
-const users = [
-    {
-        "id": uuidv4(),
-        "name": "John Smith",
-        "address": "streetroad 4",
-        "phone": "044897485",
-        "email": "john.smith@mail.com"
-
-    }
-]
-
+router.get('/', (req, res) => {
+    res.send(users)
+})
 router.post('/', (req, res) => {
     console.log(req.body)
 

@@ -1,16 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const { v4: uuidv4 } = require('uuid')
-//const bodyParser = require('body-parser')
-let product = require('./products')
+let productList = require('../data/productData.json')
 
-//router.use('/products', products)
+let products = productList.products
+
 router.get('/', (req, res) => {
-    let productList = product.products
-    console.log(product.products);
-    console.log(productList);
-    console.log(product);
-    res.send(product.products)
+    console.log(products);
+    res.send(products)
 })
 
 module.exports = router

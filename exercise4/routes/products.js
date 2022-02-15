@@ -1,25 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const { v4: uuidv4 } = require('uuid')
+let productData = require('../data/productData.json')
 
-const products = [
-    {
-        "id": uuidv4(),
-        "name": "Asus R300",
-        "manufacturer": "Asus",
-        "category": "laptops",
-        "description": "model R3000",
-        "price": 399
-    },
-    {
-        "id": uuidv4(),
-        "name": "Dell XT100",
-        "manufacturer": "Dell",
-        "category": "laptops",
-        "description":" model XT100",
-        "price": 399
-    }
-]
+let products = productData.products
 
 router.get('/', (req, res) => {
     res.send(products)
@@ -82,4 +66,3 @@ router.put('/:productId', (req, res) => {
     }
 })
 module.exports = router
-exports.products = products
