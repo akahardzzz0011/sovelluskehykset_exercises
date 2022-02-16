@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { v4: uuidv4 } = require('uuid')
 let userData = require('../data/userData')
- let users = userData.users
+let users = userData.users
 
 router.get('/', (req, res) => {
     res.send(users)
