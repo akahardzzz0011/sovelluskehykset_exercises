@@ -1,0 +1,74 @@
+.App {
+	display: flex;
+	flex-direction: column;
+}
+.cents {
+	font-size: 11px;
+}
+.currency {
+	font-size: 12px;
+}
+.currencyBox {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	margin-top: 10px;
+}
+.header {
+	align-self: center;
+}
+.locationBox {
+	width: 100%;
+	margin-top: 5px;
+}
+.locationText {
+	font-size: 10px;
+}
+.prevPrice {
+	text-decoration-line: line-through;
+	color: #0000006e;
+	font-size: 12px;
+	align-self: end;
+}
+.price {
+	font-size: 20px;
+}
+.productBox {
+	border: 2px solid #f6f6f6;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+}
+
+.products {
+	display: grid;
+	grid-template-columns: 20% 20% 20%;
+	justify-content: center;
+	row-gap: 10px;
+	column-gap: 25px;
+}
+.productImg {
+	width: 100%;
+}
+img.prod {
+	width: 100%;
+}
+.ratingBox {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin-top: 3px;
+}
+.ratingBox.text {
+	color: #037286;
+	align-self: center;
+	font-size: 13px;
+	margin-left: 2px;
+}
+.searchBar {
+	display: flex;
+	align-self: center;
+	border: 1px solid #b37d16;
+	margin-bottom: 8px;
+}
