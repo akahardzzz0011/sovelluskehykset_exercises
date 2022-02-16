@@ -9,6 +9,7 @@ function App() {
 
   const [products, setProducts] = useState([])
   const [filtered, setFiltered] = useState([])
+  const [noResults, setNoResults] = useState(false)
   const locationInfo = "Ships to Finland"
 
   useEffect(() => {
@@ -25,6 +26,18 @@ function App() {
     getData()
   }, [])
 
+  useEffect(() => {
+    if (filtered.length === 0) {
+      setNoResults(true)
+    } else {
+      setNoResults(false)
+    }
+  }, [filtered])
+
+  useEffect(() => {
+    setFiltered(filtered)
+  }, [filtered])
+
     const filteredData = (search) => {
 
       if (search !== '') {
@@ -32,7 +45,7 @@ function App() {
         prod.description.toLowerCase().includes(search.toLowerCase())
         ))
       } else {
-        setFiltered(filtered)
+        setFiltered(products)
       }
     }
 
@@ -40,6 +53,7 @@ function App() {
     <div className="App">
       <h1 className="header">Welcome to the webshop</h1>
       <SearchBar filter={ filteredData }/>
+      { noResults === true ? <h3 className="header">No Results</h3>: <h3 className="header">Results</h3>}
       <Products data={ filtered } location={locationInfo}/>
     </div>
   );
