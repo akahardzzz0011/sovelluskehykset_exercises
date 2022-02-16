@@ -1,8 +1,9 @@
 import './App.css';
-import productList from './data/products'
+//import productList from './data/products'
 import { useState, useEffect } from 'react'
 import Products from './components/Products'
 import SearchBar from './components/SearchBar';
+import axios from 'axios'
 
 function App() {
 
@@ -11,8 +12,17 @@ function App() {
   const locationInfo = "Ships to Finland"
 
   useEffect(() => {
+    /*
       setProducts(productList.products)
       setFiltered(productList.products)
+    */
+    const getData = async () => {
+      const results = await axios.get('http://localhost:3001/products')
+      console.log(results.data);
+      setProducts(results.data)
+      setFiltered(results.data)
+    }
+    getData()
   }, [])
 
     const filteredData = (search) => {
@@ -22,7 +32,7 @@ function App() {
         prod.description.toLowerCase().includes(search.toLowerCase())
         ))
       } else {
-        setFiltered(productList.products)
+        setFiltered(filtered)
       }
     }
 

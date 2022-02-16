@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { v4: uuidv4 } = require('uuid')
-let productData = require('../data/productData.json')
+let productData = require('../data/products.json')
 
 let products = productData.products
 

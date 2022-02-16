@@ -3,6 +3,9 @@ const app = express()
 const port = 3001
 const bodyParser = require('body-parser')
 const multer = require('multer')
+const cors = require('cors')
+
+app.use(cors())
 
 const products = require('./routes/products')
 const users = require('./routes/users')
@@ -26,8 +29,7 @@ app.use('/users', users)
 app.use('/invoices', invoices)
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/uploadFile.html');
-   
+    res.sendFile(__dirname + '/uploadFile.html');   
   });
 
 app.post('/uploadfile', upload.single('myFile'), (req, res) => {
