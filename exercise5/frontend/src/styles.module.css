@@ -3,3 +3,25 @@
     align-self: center;
     margin-bottom: 10px;
 }
+
+.editorHeader {
+    border: 1px solid;
+    width: 145px;
+    margin-left: 30px;
+    position: fixed;
+    padding-left: 9px;
+    margin-top: -50px;
+}
+
+.flexDisplay {
+    display: flex;
+    flex-direction: column;
+}
+
+.formSettings {
+	display: flex;
+	justify-content: center;
+    position: fixed;
+    margin-left: 30px;
+    width: 220px;
+}

@@ -54,7 +54,7 @@ function App() {
       <button className={styles.button} onClick={() => setAdminMode(!adminMode)}>Admin Mode</button>
       <SearchBar filter={ filteredData }/>
       { noResults === true ? <h3 className="header">No Results</h3>: <h3 className="header">Results</h3>}
-      { adminMode === true ? <EditorView /> : <Products data={ filtered } location={locationInfo}/>}
+      { adminMode === true ? <EditorView data={filtered} location={locationInfo}/> : <Products data={ filtered } location={locationInfo}/>}
     </div>
   );
 }
