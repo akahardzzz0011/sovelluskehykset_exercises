@@ -3,7 +3,7 @@ import EditorProductBox from './EditorProductBox'
 import styles from '../styles.module.css'
 
 export default function EditorView( {data, location}) {
-    console.log(data);
+
   return (
     <div className={styles.flexDisplay}>
         <div>
@@ -17,7 +17,7 @@ export default function EditorView( {data, location}) {
                 <div>Cents of price <input type="text" /></div>
                 <div>PreviousPrice <input type="text" /></div>
                 <div>Image url <input type="text" /></div>
-                <div>Image url <input type="text" /></div>
+                <div>Rating url <input type="text" /></div>
                 <div>Amount <input type="text" /></div>
                 <button>Add Product</button>
                 

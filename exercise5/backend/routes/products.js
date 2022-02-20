@@ -11,20 +11,24 @@ router.get('/', (req, res) => {
 
 router.get('/:productId', (req, res) => {
     let foundId = products.findIndex(p => p.id === req.params.productId)
-    
+    console.log(typeof req.params.productId);
+    console.log(foundId);
     if(foundId === -1) {
         let searchedItem = req.params.productId
-        let foundProducts = products.filter(p => p.name.toLowerCase().includes(searchedItem.toLowerCase()))
+        let foundProducts = products.filter(p => p.description.toLowerCase().includes(searchedItem.toLowerCase()))
         if(foundProducts.length > 0) {
             res.json(foundProducts)
+            console.log("desc found");
         } else {
-            foundProducts = products.filter(p => p.manufacturer.toLowerCase().includes(searchedItem.toLowerCase()))
+            foundProducts = products.filter(p => p.price === Number(searchedItem))
             if(foundProducts.length > 0) {
                 res.json(foundProducts)
+                console.log("price found");
             } else {
-                foundProducts = products.filter(p => p.category.toLowerCase().includes(searchedItem.toLowerCase()))
+                foundProducts = products.filter(p => p.amount === Number(searchedItem))
                 if(foundProducts.length > 0) {
                     res.json(foundProducts)
+                    console.log("amount found");
                 } else {
                     res.sendStatus(404)
                 }
@@ -33,7 +37,6 @@ router.get('/:productId', (req, res) => {
     } else {
         res.json(products[foundId])
     }
-    
 })
 
 router.post('/', (req, res) => {
@@ -62,6 +65,17 @@ router.put('/:productId', (req, res) => {
         res.sendStatus(202)
     } else {
         res.sendStatus(404)
+    }
+})
+
+router.delete('/:productId', (req, res) => {
+    let foundId = products.findIndex(u => u.id === req.params.productId)
+    
+    if(foundId === -1) {
+        res.sendStatus(404)
+    } else {
+        products.splice(foundId, 1)
+        res.sendStatus(202)
     }
 })
 module.exports = router
