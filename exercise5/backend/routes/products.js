@@ -70,7 +70,7 @@ router.put('/:productId', (req, res) => {
 
 router.delete('/:productId', (req, res) => {
     let foundId = products.findIndex(u => u.id === req.params.productId)
-    
+    console.log(req.params.productId);
     if(foundId === -1) {
         res.sendStatus(404)
     } else {

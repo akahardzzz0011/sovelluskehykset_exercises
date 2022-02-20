@@ -12,6 +12,7 @@ function App() {
   const [filtered, setFiltered] = useState([])
   const [noResults, setNoResults] = useState(false)
   const [adminMode, setAdminMode] = useState(false)
+  const [delProd, setEffectDelete] = useState('')
 
   const locationInfo = "Ships to Finland"
 
@@ -24,18 +25,19 @@ function App() {
     }
     getData()
   }, [])
-/*
+  
   useEffect(() => {
-    const deleteProduct = async () => {
-      const results = await axios.delete('http://localhost:3001/products', {
-
-      })
-      setProducts(results.data)
-      setFiltered(results.data)
+    if (delProd != '') {
+        const productDeletion = async () => {
+        const results = await axios.delete(`http://localhost:3001/products/${delProd}`)
+        console.log(results.status);
+        console.log(results.data);
+      }
+      productDeletion()
     }
-    deleteProduct()
-  }, [])
-*/
+
+  }, [delProd])
+
   useEffect(() => {
     if (filtered.length === 0) {
       setNoResults(true)
@@ -64,6 +66,7 @@ function App() {
       clone.splice(itemId, 1)
       setFiltered(clone)
       setProducts(clone)
+      setEffectDelete(index)
     }
   
 
