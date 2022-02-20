@@ -2,7 +2,7 @@ import React from 'react'
 import EditorProductBox from './EditorProductBox'
 import styles from '../styles.module.css'
 
-export default function EditorView( {data, location}) {
+export default function EditorView( {data, deleteProd, location}) {
 
   return (
     <div className={styles.flexDisplay}>
@@ -36,6 +36,8 @@ export default function EditorView( {data, location}) {
                     image02={d.image02}
                     amount={d.amount}
                     location={location}
+                    deleteProd={deleteProd}
+                    itemId={d.id}
                 />
             )
         }

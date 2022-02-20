@@ -24,7 +24,18 @@ function App() {
     }
     getData()
   }, [])
+/*
+  useEffect(() => {
+    const deleteProduct = async () => {
+      const results = await axios.delete('http://localhost:3001/products', {
 
+      })
+      setProducts(results.data)
+      setFiltered(results.data)
+    }
+    deleteProduct()
+  }, [])
+*/
   useEffect(() => {
     if (filtered.length === 0) {
       setNoResults(true)
@@ -46,6 +57,14 @@ function App() {
         setFiltered(products)
       }
     }
+
+    const deleteProduct = (index) => {
+      let clone = [...products]
+      let itemId = clone.findIndex(c => c.id === index)
+      clone.splice(itemId, 1)
+      setFiltered(clone)
+      setProducts(clone)
+    }
   
 
   return (
@@ -54,7 +73,7 @@ function App() {
       <button className={styles.button} onClick={() => setAdminMode(!adminMode)}>Admin Mode</button>
       <SearchBar filter={ filteredData }/>
       { noResults === true ? <h3 className="header">No Results</h3>: <h3 className="header">Results</h3>}
-      { adminMode === true ? <EditorView data={filtered} location={locationInfo}/> : <Products data={ filtered } location={locationInfo}/>}
+      { adminMode === true ? <EditorView data={filtered} deleteProd={deleteProduct} location={locationInfo}/> : <Products data={ filtered } location={locationInfo}/>}
     </div>
   );
 }

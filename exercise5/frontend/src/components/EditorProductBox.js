@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function EditorProductBox( { desc, currency, price, pCents, prevPrice, image, image02, amount, location } ) {
+export default function EditorProductBox( {itemId, desc, currency, price, pCents, prevPrice, image, image02, amount, location, deleteProd } ) {
+  
   return (
     <div className="productBox">
         <div className="productImg">
@@ -21,6 +22,9 @@ export default function EditorProductBox( { desc, currency, price, pCents, prevP
       </div>
       <div className="locationBox">
         <div className="locationText">{location}</div>
+      </div>
+      <div>
+        <button onClick={() => deleteProd(itemId)}>Delete Item</button>
       </div>
     </div>
   )
