@@ -54,6 +54,7 @@ router.post('/', (req, res) => {
         amount: Number(req.body.addedProduct.amount)
     })
     res.sendStatus(201)
+
 })
 
 router.put('/:productId', (req, res) => {

@@ -15,6 +15,7 @@ function App() {
   const [delProd, setEffectDelete] = useState('')
   const [addedProduct, setAddedProduct] = useState('')
   const [modifiedProduct, setModifiedProduct] = useState('')
+  const [ref, setRef] = useState(false)
   const locationInfo = "Ships to Finland"
 
   useEffect(() => {
@@ -25,7 +26,7 @@ function App() {
       setFiltered(results.data)
     }
     getData()
-  }, [])
+  }, [ref])
   
   useEffect(() => {
     if (delProd !== '') {
@@ -47,6 +48,7 @@ function App() {
         })
         console.log(results.status);
         console.log(results.data);
+        setRef(!ref)
       }
       productAddition()
     }
