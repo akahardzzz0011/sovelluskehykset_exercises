@@ -3,7 +3,17 @@ import EditorProductBox from './EditorProductBox'
 import styles from '../styles.module.css'
 
 export default function EditorView( {data, deleteProd, location, modifyProduct, addingProduct}) {
-    const [newProduct, setNewProduct] = useState({})
+    const [newProduct, setNewProduct] = useState({
+        id: "",
+        description: "",
+        currency: "$",
+        price: 0,
+        priceCents: 0,
+        previousPrice: "",
+        image: "",
+        image02: "",
+        amount: 0
+    })
 
     const changeHandler = (event) => {
         const name = event.target.name
