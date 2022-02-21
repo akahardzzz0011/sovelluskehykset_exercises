@@ -40,18 +40,18 @@ router.get('/:productId', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    console.log(req.body);
+    console.log(req.body.addedProduct);
 
     products.push({
         id: uuidv4(),
-        description: req.body.description,
-        currency: req.body.currency,
-        price: req.body.price,
-        priceCents: req.body.priceCents,
-        previousPrice: req.body.previousPrice,
-        image: req.body.image,
-        image02: req.body.image02,
-        amount: req.body.amount
+        description: req.body.addedProduct.description,
+        currency: req.body.addedProduct.currency,
+        price: req.body.addedProduct.price,
+        priceCents: req.body.addedProduct.priceCents,
+        previousPrice: req.body.addedProduct.previousPrice,
+        image: req.body.addedProduct.image,
+        image02: req.body.addedProduct.image02,
+        amount: req.body.addedProduct.amount
     })
     res.sendStatus(201)
 })

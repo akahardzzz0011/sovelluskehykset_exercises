@@ -13,6 +13,7 @@ function App() {
   const [noResults, setNoResults] = useState(false)
   const [adminMode, setAdminMode] = useState(false)
   const [delProd, setEffectDelete] = useState('')
+  const [addedProduct, setAddedProduct] = useState('')
 
   const locationInfo = "Ships to Finland"
 
@@ -37,6 +38,20 @@ function App() {
     }
 
   }, [delProd])
+
+  useEffect(() => {
+    if (addedProduct !== '') {
+        const productAddition = async () => {
+        const results = await axios.post('http://localhost:3001/products', {
+          addedProduct
+        })
+        console.log(results.status);
+        console.log(results.data);
+      }
+      productAddition()
+    }
+
+  }, [addedProduct])
 
   useEffect(() => {
     if (filtered.length === 0) {
@@ -68,7 +83,17 @@ function App() {
       setProducts(clone)
       setEffectDelete(index)
     }
-  
+    
+    const addingProduct = (newProduct) => {
+      console.log("newobj", newProduct);
+      let clone = [...products]
+      //clone.splice(0, 0, newProduct)
+      clone.push(newProduct)
+      console.log("products", products);
+      setFiltered(clone)
+      setProducts(clone)
+      setAddedProduct(newProduct)
+    }
 
   return (
     <div className="App">
@@ -76,7 +101,7 @@ function App() {
       <button className={styles.button} onClick={() => setAdminMode(!adminMode)}>Admin Mode</button>
       <SearchBar filter={ filteredData }/>
       { noResults === true ? <h3 className="header">No Results</h3>: <h3 className="header">Results</h3>}
-      { adminMode === true ? <EditorView data={filtered} deleteProd={deleteProduct} location={locationInfo}/> : <Products data={ filtered } location={locationInfo}/>}
+      { adminMode === true ? <EditorView data={filtered} deleteProd={deleteProduct} addingProduct={addingProduct} location={locationInfo}/> : <Products data={ filtered } location={locationInfo}/>}
     </div>
   );
 }
