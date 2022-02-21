@@ -44,11 +44,14 @@ router.post('/', (req, res) => {
 
     products.push({
         id: uuidv4(),
-        name: req.body.name,
-        manufacturer: req.body.manufacturer,
-        category: req.body.category,
         description: req.body.description,
-        price: req.body.price
+        currency: req.body.currency,
+        price: req.body.price,
+        priceCents: req.body.priceCents,
+        previousPrice: req.body.previousPrice,
+        image: req.body.image,
+        image02: req.body.image02,
+        amount: req.body.amount
     })
     res.sendStatus(201)
 })

@@ -27,7 +27,7 @@ function App() {
   }, [])
   
   useEffect(() => {
-    if (delProd != '') {
+    if (delProd !== '') {
         const productDeletion = async () => {
         const results = await axios.delete(`http://localhost:3001/products/${delProd}`)
         console.log(results.status);
