@@ -14,6 +14,7 @@ function App() {
   const [adminMode, setAdminMode] = useState(false)
   const [delProd, setEffectDelete] = useState('')
   const [addedProduct, setAddedProduct] = useState('')
+  const [modifiedProduct, setModifiedProduct] = useState('')
   const locationInfo = "Ships to Finland"
 
   useEffect(() => {
@@ -32,16 +33,6 @@ function App() {
         const results = await axios.delete(`http://localhost:3001/products/${delProd}`)
         console.log(results.status);
         console.log(results.data);
-
-        if(results.status === 404) {
-         const getData = async () => {
-            const results = await axios.get('http://localhost:3001/products')
-            console.log(results.data);
-            setProducts(results.data)
-            setFiltered(results.data)
-          }
-          getData()
-        }
       }
       productDeletion()
     }
@@ -61,6 +52,20 @@ function App() {
     }
 
   }, [addedProduct])
+
+  useEffect(() => {
+    if (modifiedProduct !== '') {
+        const productModification = async () => {
+        const results = await axios.put(`http://localhost:3001/products/${modifiedProduct.id}`, {
+          modifiedProduct
+        })
+        console.log(results.status);
+        console.log(results.data);
+      }
+      productModification()
+    }
+
+  }, [modifiedProduct])
 
   useEffect(() => {
     if (filtered.length === 0) {
@@ -92,6 +97,22 @@ function App() {
       setProducts(clone)
       setEffectDelete(index)
     }
+
+    const modifyProduct = (item) => {
+      console.log(item);
+      let clone = [...products]
+      let itemId = clone.findIndex(c => c.id === item.id)
+      if (itemId !== -1) {
+        clone.splice(itemId, 0, item)
+        clone.splice(itemId + 1, 1)
+        setProducts(clone)
+        setFiltered(clone)
+        console.log(products);
+        setModifiedProduct(item)
+      } else {
+        alert("Id does not match")
+      }
+    }
     
     const addingProduct = (newProduct) => {
       console.log("newobj", newProduct);
@@ -109,7 +130,7 @@ function App() {
       <button className={styles.button} onClick={() => setAdminMode(!adminMode)}>Admin Mode</button>
       <SearchBar filter={ filteredData }/>
       { noResults === true ? <h3 className="header">No Results</h3>: <h3 className="header">Results</h3>}
-      { adminMode === true ? <EditorView data={filtered} deleteProd={deleteProduct} addingProduct={addingProduct} location={locationInfo}/> : <Products data={ filtered } location={locationInfo}/>}
+      { adminMode === true ? <EditorView data={filtered} deleteProd={deleteProduct} modifyProduct={modifyProduct} addingProduct={addingProduct} location={locationInfo}/> : <Products data={ filtered } location={locationInfo}/>}
     </div>
   );
 }

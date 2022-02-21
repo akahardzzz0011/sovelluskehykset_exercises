@@ -59,11 +59,14 @@ router.post('/', (req, res) => {
 router.put('/:productId', (req, res) => {
     let item = products.find(p => p.id === req.params.productId)
     if(item) {
-        item.name = req.body.name
-        item.manufacturer = req.body.manufacturer
-        item.category = req.body.category
-        item.description = req.body.description
-        item.price = req.body.price
+        item.description = req.body.modifiedProduct.description,
+        item.currency = req.body.modifiedProduct.currency,
+        item.price = Number(req.body.modifiedProduct.price),
+        item.priceCents = Number(req.body.modifiedProduct.priceCents),
+        item.previousPrice = req.body.modifiedProduct.previousPrice,
+        item.image = req.body.modifiedProduct.image,
+        item.image02 = req.body.modifiedProduct.image02,
+        item.amount = Number(req.body.modifiedProduct.amount)
         
         res.sendStatus(202)
     } else {

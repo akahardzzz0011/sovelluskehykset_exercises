@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import EditorProductBox from './EditorProductBox'
 import styles from '../styles.module.css'
 
-export default function EditorView( {data, deleteProd, location, addingProduct}) {
+export default function EditorView( {data, deleteProd, location, modifyProduct, addingProduct}) {
     const [newProduct, setNewProduct] = useState({})
 
     const changeHandler = (event) => {
@@ -23,6 +23,7 @@ export default function EditorView( {data, deleteProd, location, addingProduct})
         </div>
         <div className={styles.formSettings}>
             <form onSubmit={handleSubmit}>
+                <div>Product id (if modifying) <input type="text" name="id" value={newProduct.id} onChange={changeHandler} /></div>
                 <div>Description <input type="text" name="description" value={newProduct.description} onChange={changeHandler} /></div>
                 <div>Currency(sign) <input type="text" name="currency" value={newProduct.currency} onChange={changeHandler} /></div>
                 <div>Price <input type="number" name="price" value={newProduct.price} onChange={changeHandler} /></div>
@@ -33,6 +34,9 @@ export default function EditorView( {data, deleteProd, location, addingProduct})
                 <div>Amount <input type="number" name="amount" value={newProduct.amount} onChange={changeHandler} /></div>
                 <input type="submit" value="Add Product" />
             </form>
+            <div>
+                <button onClick={() => modifyProduct(newProduct)}>Modify Product</button>
+            </div>
         </div>
         <div className="products">
         {
