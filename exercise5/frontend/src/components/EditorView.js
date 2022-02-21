@@ -15,7 +15,6 @@ export default function EditorView( {data, deleteProd, location, addingProduct})
             const a = () => addingProduct(newProduct)
         a()
     }
-     console.log(newProduct);
 
   return (
     <div className={styles.flexDisplay}>

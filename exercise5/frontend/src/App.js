@@ -14,7 +14,6 @@ function App() {
   const [adminMode, setAdminMode] = useState(false)
   const [delProd, setEffectDelete] = useState('')
   const [addedProduct, setAddedProduct] = useState('')
-
   const locationInfo = "Ships to Finland"
 
   useEffect(() => {
@@ -33,6 +32,16 @@ function App() {
         const results = await axios.delete(`http://localhost:3001/products/${delProd}`)
         console.log(results.status);
         console.log(results.data);
+
+        if(results.status === 404) {
+         const getData = async () => {
+            const results = await axios.get('http://localhost:3001/products')
+            console.log(results.data);
+            setProducts(results.data)
+            setFiltered(results.data)
+          }
+          getData()
+        }
       }
       productDeletion()
     }
@@ -87,7 +96,6 @@ function App() {
     const addingProduct = (newProduct) => {
       console.log("newobj", newProduct);
       let clone = [...products]
-      //clone.splice(0, 0, newProduct)
       clone.push(newProduct)
       console.log("products", products);
       setFiltered(clone)

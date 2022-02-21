@@ -46,12 +46,12 @@ router.post('/', (req, res) => {
         id: uuidv4(),
         description: req.body.addedProduct.description,
         currency: req.body.addedProduct.currency,
-        price: req.body.addedProduct.price,
-        priceCents: req.body.addedProduct.priceCents,
+        price: Number(req.body.addedProduct.price),
+        priceCents: Number(req.body.addedProduct.priceCents),
         previousPrice: req.body.addedProduct.previousPrice,
         image: req.body.addedProduct.image,
         image02: req.body.addedProduct.image02,
-        amount: req.body.addedProduct.amount
+        amount: Number(req.body.addedProduct.amount)
     })
     res.sendStatus(201)
 })
